@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="d-flex h-100 justify-content-center align-self-center">
+    <div class="text-center" id="loginpage">
+        <h1 class="display-6">Login</h1>
+        <form class="form">
+            <div class="form-group">
+                <label for="name" class="d-flex align-self-start">Nome:</label>
+                <input class="form-control" id="name" type="text"></input>
+            </div>
+            <div class="form-group mb-3">
+                <label class="d-flex align-self-start">Senha:</label>
+                <input class="form-control" type="password"></input>
+            </div>
+            <button class="btn btn-primary">Acessar</button>
+        </form>
+        <div>
+            <p >Não é cadastrado? <a id="linkclick"><u>Clique aqui</u></a></p>
+        </div>
+    </div>
+
+</div>
+
+
+
+<style>
+    #loginpage {
+        background-color: whitesmoke;
+        width: 25vw;
+        border-radius: 20px;
+        padding: 10px 20px;        
+        min-height: 30%;
+        box-shadow: 0.5rem 0.5rem 0.5rem rgba(51,51,51,.2);
+        border-bottom: 12px solid #2e4aff;
+        align-self:center;
+    }
+
+    #linkclick {
+        color: #2e4aff;
+        font-weight: 400;
+    }
+     main {
+        height: 100vh;
+    }
+</style>
