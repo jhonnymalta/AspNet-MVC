@@ -1,10 +1,9 @@
-﻿using _001_LoginSystem.Models;
+﻿using _002_Portfolio.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace _001_LoginSystem.Controllers
+namespace _002_Portfolio.Controllers
 {
-    [ApiController]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -16,12 +15,14 @@ namespace _001_LoginSystem.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-        [HttpGet("user/new_user")]
-        public IActionResult NewUser()
-        {
-            return View();
+            var profile = new UserProfile()
+            {
+                Name = "Jhonatan Landes",
+                Email = "contato@jotalandes.com.br",
+                Telefone = "(031) 999328177"
+            };
+            //ViewBag.NameProfile = "Jhonatan Landes";
+            return View( profile);
         }
 
         public IActionResult Privacy()
