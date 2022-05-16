@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Create">Novo Produto</a>
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nome do Produto</th>
+                <th scope="col">Descição curta</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Quantidade em Estoque</th>
+                <th scope="col">Acões</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produto in @Model)
+            {
+                <tr>
+                    <th scope="row">@produto.Name</th>
+                    <td>@produto.shortDescription</td>
+                    <td>R$: @produto.Price</td>
+                    <td>@produto.Quantity</td>
+                    <td>
+                        <a class="btn btn-primary">Editar</a>
+                        <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@produto.Id">Deletar</a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>

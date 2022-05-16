@@ -1,11 +1,46 @@
-﻿
+﻿@model ListCoursesViewModel
 @{
-    ViewData["Title"] = "Cursos";       
-}
 
-<div>
-    <partial name="_LastCourses" ></partial>
-    <partial name="_CoursesList" ></partial>
+    ViewData["Title"] = "Habilidades";
+}
+<div class="container-fluid h-100">
+    <div class="row h-100 ">
+        <div class="col-10  ladoA  d-flex align-items-center justify-content-center ">
+           
+             <partial name="_LastCourses"></partial>
+            
+        </div>
+        <div class="col-2 ladoB  p-5 h-100">
+
+           <partial name="_CoursesList" ></partial>
+        </div>
+
+    </div>
 </div>
+
+
+
+
+<style>
+   
+
+    .ladoA {
+       
+         
+    }
+
+ 
+  
+
+
+    .ladoB {
+       background-color: black;
+    }
+
+  
+</style>
+
+
+
 
 
