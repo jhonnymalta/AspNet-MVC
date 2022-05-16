@@ -6,6 +6,7 @@ namespace _003_RestSharp.Repositories
     public interface IRepositoryProducts
     {
         Task<Product> Delete(int id);
+        Task<Product> EditProduct(Product product, int id);
         Task<List<Product>> GetAllProducts();
         Task<Product> GetByID(int id);
         Task<Product> PostProduct(Product product);
@@ -37,6 +38,14 @@ namespace _003_RestSharp.Repositories
             var response = await client.PostAsync<Product>(request);            
             return  response;
            
+        }
+        public async Task<Product> EditProduct(Product product,int id)
+        {
+            var client = new RestClient("https://localhost:7207/v1/product");
+            var request = new RestRequest($"{id}", Method.Put);
+            request.AddBody(product);
+            var response = await client.PutAsync<Product>(request);
+            return response;
         }
         public async Task<Product> Delete(int id)
         {

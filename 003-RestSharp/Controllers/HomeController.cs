@@ -47,6 +47,18 @@ namespace _003_RestSharp.Controllers
             return View(produto);
 
         }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var produtTochenge = repositoryProducts.GetByID(id).Result;
+            return View(produtTochenge);
+        }
+        [HttpPost]
+        public IActionResult EditProduct(Product produto, int id)
+        {
+            var editedProduct = repositoryProducts.EditProduct(produto, id);
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         public IActionResult DeleteProduct(int id)

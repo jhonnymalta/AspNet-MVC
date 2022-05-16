@@ -29,7 +29,7 @@
                     <td>R$: @produto.Price</td>
                     <td>@produto.Quantity</td>
                     <td>
-                        <a class="btn btn-primary">Editar</a>
+                        <a class="btn btn-primary" asp-controller="Home" asp-action="Edit" asp-route-id="@produto.Id">Editar</a>
                         <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@produto.Id">Deletar</a>
                     </td>
                 </tr>
