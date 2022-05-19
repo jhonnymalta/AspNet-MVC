@@ -1,0 +1,41 @@
+﻿@page "/";
+@page "/login";
+
+
+    <MudContainer Fixed="true" Class=" d-flex align-center justify-center">
+        <MudPaper Height="300px" Width="400px" Class="pa-6  " Elevation="4" >
+            <h2 class=" d-flex align-self-center  ">Login</h2>
+            <MudTextField @bind-Value="Name" Label="Name" Variant="Variant.Outlined"></MudTextField>
+             <MudTextField @bind-Value="Password" Label="Password" Variant="Variant.Text" InputType="@PasswordInput" Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="ButtonTestclick" AdornmentAriaLabel="Show Password" />
+             <div  Class="my-3">
+                 <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true">Entrar</MudButton>
+             </div>
+             <div>
+                 <p>Não é cadastrado? <MudLink Href="#" Underline="Underline.Always">Clique aqui</MudLink></p>
+             </div>
+        </MudPaper>
+    </MudContainer>
+
+
+@code {
+    public string Name { get; set; }
+    bool isShow;
+    InputType PasswordInput = InputType.Password;
+     public string Password { get; set;} = "";
+      string PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+      void ButtonTestclick()
+    {
+        @if (isShow)
+        {
+            isShow = false;
+            PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+            PasswordInput = InputType.Password;
+        }
+        else {
+            isShow = true;
+            PasswordInputIcon = Icons.Material.Filled.Visibility;
+            PasswordInput = InputType.Text;
+        }
+    }
+}
+ 
