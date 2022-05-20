@@ -1,0 +1,31 @@
+﻿@page "/newuser"
+
+
+
+<MudContainer>
+    <MudGrid>
+        <MudItem xs="6">
+            <img src="https://d2v1hpltdjq1rf.cloudfront.net/static/account/assets/images/ic-login.png" style="width:410px">
+        </MudItem>
+        <MudItem xs="6">
+            <MudPaper Class="align-center justify-center mud-width-full pa-6" Elevation="3">
+                <h3>Registrar-se</h3>
+                <MudTextField @bind-Value="Name" Label="Nome de usuário" Variant="Variant.Outlined"></MudTextField>
+                <MudTextField @bind-Value="Email" Label="E-mail" Variant="Variant.Outlined"></MudTextField>
+                <MudTextField @bind-Value="Telefone" Label="Telefone" Variant="Variant.Outlined"></MudTextField>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" Class="mt-2">Entrar</MudButton>
+
+
+            </MudPaper>
+        </MudItem>
+
+
+    </MudGrid>
+
+</MudContainer>
+
+@code {
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string Telefone { get; set; }
+}
